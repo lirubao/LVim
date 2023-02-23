@@ -5,11 +5,11 @@
 <hr>
 
 <h4 align="center">
-  <a href="https://lazyvim.github.io/installation">安装</a>
+  <a href="https://lazyvim.github.io/installation">Install</a>
   ·
-  <a href="https://lazyvim.github.io/configuration">配置</a>
+  <a href="https://lazyvim.github.io/configuration">Configure</a>
   ·
-  <a href="https://lazyvim.github.io">文档</a>
+  <a href="https://lazyvim.github.io">Docs</a>
 </h4>
 
 <div align="center"><p>
@@ -36,33 +36,35 @@
     </a>
 </div>
 
-LazyVim 是由 [💤 lazy.nvim](https://github.com/folke/lazy.nvim) 驱动的一套 Neovim 配置，可以轻松自定义和扩展您的配置。
-不必在从头开始或使用预制发行版之间做选择，
-LazyVim 提供了两全其美的方式 - 根据需要调整配置的灵活性，以及默认预配置的便利性。
+LazyVim is a Neovim setup powered by [💤 lazy.nvim](https://github.com/folke/lazy.nvim)
+to make it easy to customize and extend your config.
+Rather than having to choose between starting from scratch or using a
+pre-made distro, LazyVim offers the best of both worlds - the flexibility
+to tweak your config as needed, along with the convenience of a pre-configured setup.
 
 ![image](https://user-images.githubusercontent.com/292349/211285846-0b7bb3bf-0462-4029-b64c-4ee1d037fc1c.png)
 
 ![image](https://user-images.githubusercontent.com/292349/213447056-92290767-ea16-430c-8727-ce994c93e9cc.png)
 
-## ✨ 特性
+## ✨ Features
 
-- 🔥 将你的 Neovim 变成一个成熟的 IDE
-- 💤 使用 [lazy.nvim](https://github.com/folke/lazy.nvim) 轻松自定义和扩展您的配置
-- 🚀 快如闪电
-- 🧹 选项、自动命令和键盘映射的合理预设
-- 📦 预配置了大量插件，随时可用
+- 🔥 Transform your Neovim into a full-fledged IDE
+- 💤 Easily customize and extend your config with [lazy.nvim](https://github.com/folke/lazy.nvim)
+- 🚀 Blazingly fast
+- 🧹 Sane default settings for options, autocmds, and keymaps
+- 📦 Comes with a wealth of plugins pre-configured and ready to use
 
-## ⚡️ 要求
+## ⚡️ Requirements
 
-- Neovim >= **0.8.0** (需要用 **LuaJIT** 构建)
-- Git >= **2.19.0** (用于部分克隆支持)
-- 一个 [Nerd Font](https://www.nerdfonts.com/) 字体 **_(可选)_**
+- Neovim >= **0.8.0** (needs to be built with **LuaJIT**)
+- Git >= **2.19.0** (for partial clones support)
+- a [Nerd Font](https://www.nerdfonts.com/) **_(optional)_**
 
-## 🚀 入门
+## 🚀 Getting Started
 
-您可以在 [此处](https://github.com/LazyVim/starter) 找到 **LazyVim** 的入门模板
+You can find a starter template for **LazyVim** [here](https://github.com/LazyVim/starter)
 
-<details><summary>在 Docker 中尝试</summary>
+<details><summary>Try it with Docker</summary>
 
 ```sh
 docker run -w /root -it --rm alpine:edge sh -uelic '
@@ -75,51 +77,52 @@ docker run -w /root -it --rm alpine:edge sh -uelic '
 
 </details>
 
-<details><summary> 安装 <a href="https://github.com/LazyVim/starter">LazyVim Starter</a></summary>
+<details><summary>Install the <a href="https://github.com/LazyVim/starter">LazyVim Starter</a></summary>
 
-- 备份您当前的 Neovim 文件
+- Make a backup of your current Neovim files:
 
   ```sh
   mv ~/.config/nvim ~/.config/nvim.bak
   mv ~/.local/share/nvim ~/.local/share/nvim.bak
   ```
 
-- 克隆 starter
+- Clone the starter
 
   ```sh
   git clone https://github.com/LazyVim/starter ~/.config/nvim
   ```
 
-- 删除 `.git` 文件夹，以便稍后将其添加到您自己的存储库
+- Remove the `.git` folder, so you can add it to your own repo later
 
   ```sh
   rm -rf ~/.config/nvim/.git
   ```
 
-- 启动 Neovim!
+- Start Neovim!
 
   ```sh
   nvim
   ```
 
-  请参阅文件中有关如何自定义 **LazyVim** 的注释。
+  Refer to the comments in the files on how to customize **LazyVim**.
 
 </details>
 
 ---
 
-[@elijahmanor](https://github.com/elijahmanor) 制作了一段很棒的视频，其中包含入门演练。
+There's a great video created by [@elijahmanor](https://github.com/elijahmanor) with a walkthrough to get started.
 
 [![Watch the video](https://img.youtube.com/vi/N93cTbtLCIM/hqdefault.jpg)](https://www.youtube.com/watch?v=N93cTbtLCIM)
 
-## 📂 文件结构
+## 📂 File Structure
 
-config 下的文件会在适当的时候自动加载，所以你不需要手动引入这些文件。
-**LazyVim** 带有一组默认配置文件，这些文件将在您的配置**之前**加载。
-看[这里](https://github.com/LazyVim/LazyVim/tree/main/lua/lazyvim/config)
+The files under config will be automatically loaded at the appropriate time,
+so you don't need to require those files manually.
+**LazyVim** comes with a set of default config files that will be loaded
+**_before_** your own. See [here](https://github.com/LazyVim/LazyVim/tree/main/lua/lazyvim/config)
 
-您可以在 `lua/plugins/` 下添加自定义插件配置(specs)。
-[lazy.nvim](https://github.com/folke/lazy.nvim) 会自动加载这些文件。
+You can add your custom plugin specs under `lua/plugins/`. All files there
+will be automatically loaded by [lazy.nvim](https://github.com/folke/lazy.nvim)
 
 <pre>
 ~/.config/nvim
@@ -138,4 +141,4 @@ config 下的文件会在适当的时候自动加载，所以你不需要手动�
 
 ## ⚙️ Configuration
 
-参考[文档](https://lazyvim.github.io/)
+Refer to the [docs](https://lazyvim.github.io)
