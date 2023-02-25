@@ -1,7 +1,7 @@
 local M = {}
 
 function M.check()
-  vim.health.report_start("LazyVim")
+  vim.health.report_start("LVim")
 
   if vim.fn.has("nvim-0.8.0") == 1 then
     vim.health.report_ok("Using Neovim >= 0.8.0")

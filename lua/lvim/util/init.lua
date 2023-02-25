@@ -82,7 +82,7 @@ function M.get_root()
 end
 
 -- this will return a function that calls telescope.
--- cwd will default to lazyvim.util.get_root
+-- cwd will default to lvim.util.get_root
 -- for `files`, git_files or find_files will be chosen depending on .git
 function M.telescope(builtin, opts)
   local params = { builtin = builtin, opts = opts }
@@ -147,7 +147,7 @@ function M.toggle_diagnostics()
 end
 
 function M.deprecate(old, new)
-  Util.warn(("`%s` is deprecated. Please use `%s` instead"):format(old, new), { title = "LazyVim" })
+  Util.warn(("`%s` is deprecated. Please use `%s` instead"):format(old, new), { title = "LVim" })
 end
 
 -- delay notifications till vim.notify was replaced or after 500ms

@@ -1,6 +1,6 @@
--- This file is automatically loaded by lazyvim.plugins.config
+-- This file is automatically loaded by lvim.plugins.config
 
-local Util = require("lazyvim.util")
+local Util = require("lvim.util")
 
 local function map(mode, lhs, rhs, opts)
   local keys = require("lazy.core.handler").handlers.keys
@@ -99,7 +99,7 @@ map("n", "<leader>xq", "<cmd>copen<cr>", { desc = "Quickfix List" })
 -- stylua: ignore start
 
 -- toggle options
-map("n", "<leader>uf", require("lazyvim.plugins.lsp.format").toggle, { desc = "Toggle format on Save" })
+map("n", "<leader>uf", require("lvim.plugins.lsp.format").toggle, { desc = "Toggle format on Save" })
 map("n", "<leader>us", function() Util.toggle("spell") end, { desc = "Toggle Spelling" })
 map("n", "<leader>uw", function() Util.toggle("wrap") end, { desc = "Toggle Word Wrap" })
 map("n", "<leader>ul", function() Util.toggle("relativenumber", true) Util.toggle("number") end, { desc = "Toggle Line Numbers" })

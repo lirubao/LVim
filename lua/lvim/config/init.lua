@@ -1,9 +1,9 @@
----@type LazyVimConfig
+---@type LVimConfig
 local M = {}
 
 M.lazy_version = ">=9.1.0"
 
----@class LazyVimConfig
+---@class LVimConfig
 local defaults = {
   -- colorscheme can be a string like `catppuccin` or a function that will load the colorscheme
   ---@type string|fun()
@@ -12,9 +12,9 @@ local defaults = {
   end,
   -- load the default settings
   defaults = {
-    autocmds = true, -- lazyvim.config.autocmds
-    keymaps = true, -- lazyvim.config.keymaps
-    options = true, -- lazyvim.config.options
+    autocmds = true, -- lvim.config.autocmds
+    keymaps = true, -- lvim.config.keymaps
+    options = true, -- lvim.config.options
   },
   -- icons used by other plugins
   icons = {
@@ -69,19 +69,19 @@ local defaults = {
   },
 }
 
----@type LazyVimConfig
+---@type LVimConfig
 local options
 
----@param opts? LazyVimConfig
+---@param opts? LVimConfig
 function M.setup(opts)
   options = vim.tbl_deep_extend("force", defaults, opts or {})
   if not M.has() then
     require("lazy.core.util").error(
-      "**LazyVim** needs **lazy.nvim** version "
+      "**LVim** needs **lazy.nvim** version "
         .. M.lazy_version
         .. " to work properly.\n"
         .. "Please upgrade **lazy.nvim**",
-      { title = "LazyVim" }
+      { title = "LVim" }
     )
     error("Exiting")
   end
@@ -89,7 +89,7 @@ function M.setup(opts)
   if vim.fn.argc(-1) == 0 then
     -- autocmds and keymaps can wait to load
     vim.api.nvim_create_autocmd("User", {
-      group = vim.api.nvim_create_augroup("LazyVim", { clear = true }),
+      group = vim.api.nvim_create_augroup("LVim", { clear = true }),
       pattern = "VeryLazy",
       callback = function()
         M.load("autocmds")
@@ -139,13 +139,13 @@ function M.load(name)
       end,
     })
   end
-  -- always load lazyvim, then user file
+  -- always load lvim, then user file
   if M.defaults[name] then
-    _load("lazyvim.config." .. name)
+    _load("lvim.config." .. name)
   end
   _load("config." .. name)
   if vim.bo.filetype == "lazy" then
-    -- HACK: LazyVim may have overwritten options of the Lazy ui, so reset this here
+    -- HACK: LVim may have overwritten options of the Lazy ui, so reset this here
     vim.cmd([[do VimResized]])
   end
 end
@@ -155,12 +155,12 @@ function M.init()
   if not M.did_init then
     M.did_init = true
     -- delay notifications till vim.notify was replaced or after 500ms
-    require("lazyvim.util").lazy_notify()
+    require("lvim.util").lazy_notify()
 
     -- load options here, before lazy init while sourcing plugin modules
     -- this is needed to make sure options will be correctly applied
     -- after installing missing plugins
-    require("lazyvim.config").load("options")
+    require("lvim.config").load("options")
   end
 end
 
@@ -169,7 +169,7 @@ setmetatable(M, {
     if options == nil then
       return vim.deepcopy(defaults)[key]
     end
-    ---@cast options LazyVimConfig
+    ---@cast options LVimConfig
     return options[key]
   end,
 })

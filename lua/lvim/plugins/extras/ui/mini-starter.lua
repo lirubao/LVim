@@ -10,12 +10,12 @@ return {
     event = "VimEnter",
     opts = function()
       local logo = table.concat({
-        "██╗      █████╗ ███████╗██╗   ██╗██╗   ██╗██╗███╗   ███╗          Z",
-        "██║     ██╔══██╗╚══███╔╝╚██╗ ██╔╝██║   ██║██║████╗ ████║      Z",
-        "██║     ███████║  ███╔╝  ╚████╔╝ ██║   ██║██║██╔████╔██║   z",
-        "██║     ██╔══██║ ███╔╝    ╚██╔╝  ╚██╗ ██╔╝██║██║╚██╔╝██║ z",
-        "███████╗██║  ██║███████╗   ██║    ╚████╔╝ ██║██║ ╚═╝ ██║",
-        "╚══════╝╚═╝  ╚═╝╚══════╝   ╚═╝     ╚═══╝  ╚═╝╚═╝     ╚═╝",
+        "██╗     ██╗   ██╗██╗███╗   ███╗          Z",
+        "██║     ██║   ██║██║████╗ ████║      Z",
+        "██║     ██║   ██║██║██╔████╔██║   z",
+        "██║     ╚██╗ ██╔╝██║██║╚██╔╝██║ z",
+        "███████╗ ╚████╔╝ ██║██║ ╚═╝ ██║",
+        "╚══════╝  ╚═══╝  ╚═╝╚═╝     ╚═╝",
       }, "\n")
       local pad = string.rep(" ", 22)
       local new_section = function(name, action, section)
@@ -59,7 +59,7 @@ return {
       starter.setup(config)
 
       vim.api.nvim_create_autocmd("User", {
-        pattern = "LazyVimStarted",
+        pattern = "LVimStarted",
         callback = function()
           local stats = require("lazy").stats()
           local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
