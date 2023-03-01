@@ -8,16 +8,15 @@ function I18n.setup(newLocale)
 end
 
 local function translate(...)
-  for i, v in ipairs{...} do
-    if type(I18n.locales[defaultLocale][v]) ~= "table" then
-      return I18n.locales[defaultLocale][v]
-      else
-        if type(select(i+1,...)) ~= "table" then
-          return I18n.locales[defaultLocale][v][select(i+1,...)]
-        end
-    end
-    
-  end
+	for i,v in ipairs{...} do
+		if type(I18n.locales[defaultLocale][v]) ~= "table" then
+			return I18n.locales[defaultLocale][v]
+		else 
+			if type(select(i+1,...)) ~= "table" then
+        return I18n.locales[defaultLocale][v][select(i+1,...)]
+      end
+		end
+	end
 end
 
 I18n.translate = translate

@@ -34,7 +34,7 @@ map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = I18n.translate("wi
 -- Move Lines
 map("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = I18n.translate("move","nD") })
 map("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = I18n.translate("move","nU") })
-map("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { I18n.translate("move","iD") })
+map("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = I18n.translate("move","iD") })
 map("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = I18n.translate("move","iU") })
 map("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = I18n.translate("move","vD") })
 map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = I18n.translate("move","vU") })
