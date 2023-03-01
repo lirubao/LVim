@@ -4,7 +4,7 @@ local defaultLocale = "zh"
 
 -- @newLocale
 function I18n.setup(newLocale)
-  defaultLocale = newLocale
+  defaultLocale = defaultLocale or newLocale
 end
 
 local function translate(id)
