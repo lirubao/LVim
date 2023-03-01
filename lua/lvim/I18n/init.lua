@@ -14,7 +14,7 @@ end
 I18n.translate = translate
 
 setmetatable(I18n, {
-  __call = function(_, ...)
+  __call = function(_, id)
     return translate(id)
   end,
 })
