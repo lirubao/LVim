@@ -1,6 +1,7 @@
 -- This file is automatically loaded by lvim.plugins.config
 
 local Util = require("lvim.util")
+local I18n = require("lvim.I18n")
 
 local function map(mode, lhs, rhs, opts)
   local keys = require("lazy.core.handler").handlers.keys
@@ -88,7 +89,7 @@ map("v", "<", "<gv")
 map("v", ">", ">gv")
 
 -- lazy
-map("n", "<leader>l", "<cmd>:Lazy<cr>", { desc = "Lazy包管理" })
+map("n", "<leader>l", "<cmd>:Lazy<cr>", { desc = I18n.translate("lazy") })
 
 -- new file
 map("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
