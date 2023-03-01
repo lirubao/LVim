@@ -92,7 +92,7 @@ map("v", ">", ">gv")
 map("n", "<leader>l", "<cmd>:Lazy<cr>", { desc = I18n.translate("lazy") })
 
 -- new file
-map("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
+map("n", "<leader>fn", "<cmd>enew<cr>", { desc = I18n.translate("newFile") })
 
 map("n", "<leader>xl", "<cmd>lopen<cr>", { desc = "Location List" })
 map("n", "<leader>xq", "<cmd>copen<cr>", { desc = "Quickfix List" })
